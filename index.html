@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="miApp" >
+<meta charset="utf-8">
+  <head>
+    <title>Mi primer Angular SPA App </title>
+  </head>
+  <body>
+    <div ng-view>  
+    </div>
+
+    <script type='text/ng-template' id='main.html'>
+      <h1>Ciudades que quiero visitar</h1>
+      <input type="text" ng-model="query">
+      <ul>
+        <li ng-repeat="city in cities | filter:query">
+          {{city.name}} - {{city.country}}
+        </li>
+      </ul>
+      <a href="#/agregar">Agregar</a>
+       </script>
+
+      <script type="text/ng-template" id='addCity.html'>
+
+      <input type="text"  ng-model="newCity"
+       placeholder="¿A qué ciudad?">
+
+<input type="text" ng-model="newCountry"
+       placeholder="¿En qué país?">
+
+<input type="button" value="Agregar" ng-click="agregar()">
+</script>
+   
+     <script 
+      src="js/angular.min.js">
+    </script>
+
+    <!-- Librería de rutas de angular -->
+   <script 
+      src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular-route.min.js">
+    </script> 
+
+
+    <script src="index.js"></script>
+
+  </body>
+</html>

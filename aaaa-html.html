@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="cityApp">
+  <head>
+    <title>Mi primer Angular SPA App </title>
+  </head>
+  <body>
+    <div ng-controller="mainController">  
+    </div>
+    <script type='text/ng-template' id='main.html'>
+      <h1>Ciudades que quiero visitar</h1>
+      <input type="text" ng-model="query">
+      <ul>
+        <li ng-repeat="city in cities | filter:query">
+          {{city.name}} - {{city.country}}
+        </li>
+      </ul>
+    </script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="index.js"></script>
+
+  </body>
+</html>

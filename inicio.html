@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>Mi primer Angular SPA App </title>
+    <script>
+      function mainController($scope) {
+        $scope.cities =[
+          {name:'Bariloche', country:'Argentina'},
+          {name:'Puerto Madryn', country:'Argentina'},
+          {name:'Paris', country:'Francia'},
+          {name:'Londres', country:'Reino Unido'}
+        ];
+      }
+    </script>
+  </head>
+  <body>
+    <div ng-controller="mainController">
+      <h1>Ciudades que quiero visitar</h1>
+      <input type="text" ng-model="query">
+      <ul>
+        <li ng-repeat="city in cities | filter:query">
+          {{city.name}} - {{city.country}}
+        </li>
+      </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.14/angular.min.js"></script>
+  </body>
+</html>
